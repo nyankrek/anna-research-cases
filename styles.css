@@ -125,7 +125,7 @@ body:not(.home-page) .case-facts dt{color:#DDAD8A}
 @media(max-width:720px){.home-page .project-visual.case-cover{aspect-ratio:auto;width:100%;min-height:250px;padding:25px 22px 19px}.home-page .case-cover-title{font-size:clamp(44px,9vw,65px)}.unlock-screen{padding-top:32px;min-height:calc(100vh - 130px)}.unlock-screen .back-link{margin-bottom:75px}.unlock-layout{grid-template-columns:1fr;gap:65px}.unlock-layout h1{font-size:clamp(54px,12vw,83px)}.unlock-intro{font-size:23px}.regions-case-header{padding-top:70px;padding-bottom:70px}.regions-case-header h1{font-size:clamp(54px,11vw,80px)}.regions-lede{font-size:25px}.regions-pullquote{grid-template-columns:1fr;gap:24px;padding:36px 0 44px;margin-bottom:58px}.regions-pullquote p{font-size:clamp(39px,9vw,58px)}}
 /* Quiet, one-time entrance as content enters the viewport. */
 .home-page .about-section{border-top:0}
-.home-page .about-accent{font-family:Georgia,serif;font-style:italic;letter-spacing:-.025em;text-decoration:underline;text-decoration-color:#88A33B;text-decoration-thickness:2px;text-underline-offset:5px}
+.home-page .about-accent{color:inherit;font:inherit;font-weight:600;background:linear-gradient(transparent 18%,#DDAD8A 18%,#DDAD8A 88%,transparent 88%);padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .home-page.has-reveal .reveal-item{opacity:0;translate:0 18px;transition:opacity 1100ms ease,translate 1100ms cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,170ms)}
 .home-page.has-reveal .reveal-item.is-visible{opacity:1;translate:0 0}
 .home-page .intro h1.is-typing{min-height:.88em}
