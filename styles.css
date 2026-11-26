@@ -33,7 +33,7 @@ img{display:block;max-width:100%}
 .intro-context p{font-size:16px}
 .intro-portrait{margin:0;justify-self:end;width:100%;max-width:250px}
 .portrait-frame{width:100%;height:300px;overflow:hidden;background:#88A33B}
-.intro-portrait img{width:100%;height:100%;object-fit:cover;transform:scale(1.25);filter:grayscale(1)}
+.intro-portrait img{width:100%;height:100%;object-fit:cover;object-position:center bottom}
 .intro-portrait figcaption{font-size:11px;line-height:1.4;color:var(--muted);margin-top:9px}
 .section-heading h2{font:400 clamp(52px,5.6vw,80px)/.98 Georgia,serif;letter-spacing:-.06em}
 .section-heading h2 sup{font:700 14px/1 var(--font);letter-spacing:0;color:var(--accent);vertical-align:top;margin-left:6px}
@@ -62,7 +62,6 @@ img{display:block;max-width:100%}
 .home-page .intro-context p{font-size:17px;line-height:1.5}
 .home-page .intro-portrait{width:100%;max-width:330px;transform:translateY(-98px);margin-bottom:-98px}
 .home-page .portrait-frame{height:410px;border:2px solid var(--ink);background:#1B4436}
-.home-page .intro-portrait img{transform:scale(1.25)}
 .home-page .work-section{width:100%;max-width:none;margin:0;padding:100px max(40px,calc((100vw - 1240px)/2)) 132px;background:#1B4436;color:#F9E4C5;border-top:0}
 .home-page .section-heading{margin-bottom:98px}
 .home-page .section-heading h2{font-size:clamp(70px,7.5vw,112px);color:#F9E4C5}
