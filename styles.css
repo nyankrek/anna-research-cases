@@ -89,14 +89,16 @@ body:not(.home-page) .case-facts{width:100%;max-width:none;margin:0 0 90px;paddi
 body:not(.home-page) .case-facts div{padding:27px 22px 30px 0}
 body:not(.home-page) .case-facts dt{color:#DDAD8A}
 @media(max-width:720px){body:not(.home-page) .site-header{padding-inline:20px}body:not(.home-page) .case-facts{padding-inline:20px;margin-bottom:58px}body:not(.home-page) .case-facts div{padding:16px 0;border-bottom:1px solid #88A33B}body:not(.home-page) .case-facts div:last-child{border:0}}
-/* Private Avito cases */
-.home-page .project-visual.regional-visual,.home-page .project-visual.feedback-visual{aspect-ratio:16/9;display:flex;flex-direction:column;justify-content:space-between;padding:27px 30px;background:#DDAD8A;color:#1B4436;text-decoration:none}
-.home-page .project-visual.feedback-visual{background:#88A33B;border-left:12px solid #5B758C}
-.home-page .regional-visual-word,.home-page .feedback-visual-word{font-size:clamp(45px,6.2vw,95px);font-weight:700;line-height:.84;letter-spacing:-.095em}
-.home-page .regional-visual-period{color:#F9E4C5}
-.home-page .feedback-visual-word{font-size:clamp(38px,4.9vw,75px);line-height:.97}
-.home-page .regional-visual .visual-caption,.home-page .feedback-visual .visual-caption{color:#1B4436;letter-spacing:0}
-.home-page .feedback-visual .visual-caption{align-self:flex-start;background:#F9E4C5;padding:6px 8px}
+/* A shared editorial cover for every case. */
+.home-page .project-visual.case-cover{--cover-accent:#88A33B;aspect-ratio:16/9;position:relative;display:grid;grid-template-rows:auto 1fr auto;gap:18px;align-self:center;padding:29px 29px 24px;overflow:hidden;border:1px solid #bda88d;background:#F9E4C5;color:#1B4436;text-decoration:none}
+.home-page .project-visual.case-cover:before{content:"";position:absolute;inset:0 0 auto;height:7px;background:var(--cover-accent)}
+.home-page .case-cover.cover-feedback{--cover-accent:#5B758C}
+.home-page .case-cover.cover-desirability{--cover-accent:#DDAD8A}
+.home-page .case-cover.cover-editor{--cover-accent:#88A33B}
+.home-page .case-cover-top,.home-page .case-cover-bottom{display:flex;justify-content:space-between;gap:14px;font-size:11px;font-weight:700;line-height:1.35;letter-spacing:.055em;text-transform:uppercase}
+.home-page .case-cover-title{align-self:center;font:400 clamp(44px,5.2vw,76px)/.94 Georgia,serif;letter-spacing:-.065em}
+.home-page .case-cover-bottom{padding-top:12px;border-top:1px solid #1B4436}
+.home-page .case-cover:focus-visible{outline:3px solid #DDAD8A;outline-offset:4px}
 .unlock-screen{min-height:calc(100vh - 138px);padding-top:44px;padding-bottom:110px}
 .unlock-screen .back-link{margin-bottom:112px}
 .unlock-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.44fr);gap:70px;align-items:end}
@@ -120,4 +122,4 @@ body:not(.home-page) .case-facts dt{color:#DDAD8A}
 .regions-pullquote span{font-size:11px;font-weight:700;letter-spacing:.075em;text-transform:uppercase;color:#1B4436}
 .regions-pullquote p{font:400 clamp(38px,4.6vw,70px)/1.07 Georgia,serif;letter-spacing:-.055em;max-width:850px;margin:0}
 .feedback-article .regions-pullquote p{max-width:930px}
-@media(max-width:720px){.home-page .project-visual.regional-visual,.home-page .project-visual.feedback-visual{padding:20px;min-height:250px}.home-page .regional-visual-word{font-size:clamp(55px,14vw,83px)}.home-page .feedback-visual-word{font-size:clamp(44px,11vw,70px)}.unlock-screen{padding-top:32px;min-height:calc(100vh - 130px)}.unlock-screen .back-link{margin-bottom:75px}.unlock-layout{grid-template-columns:1fr;gap:65px}.unlock-layout h1{font-size:clamp(54px,12vw,83px)}.unlock-intro{font-size:23px}.regions-case-header{padding-top:70px;padding-bottom:70px}.regions-case-header h1{font-size:clamp(54px,11vw,80px)}.regions-lede{font-size:25px}.regions-pullquote{grid-template-columns:1fr;gap:24px;padding:36px 0 44px;margin-bottom:58px}.regions-pullquote p{font-size:clamp(39px,9vw,58px)}}
+@media(max-width:720px){.home-page .project-visual.case-cover{min-height:250px;padding:25px 22px 19px}.home-page .case-cover-title{font-size:clamp(44px,9vw,65px)}.unlock-screen{padding-top:32px;min-height:calc(100vh - 130px)}.unlock-screen .back-link{margin-bottom:75px}.unlock-layout{grid-template-columns:1fr;gap:65px}.unlock-layout h1{font-size:clamp(54px,12vw,83px)}.unlock-intro{font-size:23px}.regions-case-header{padding-top:70px;padding-bottom:70px}.regions-case-header h1{font-size:clamp(54px,11vw,80px)}.regions-lede{font-size:25px}.regions-pullquote{grid-template-columns:1fr;gap:24px;padding:36px 0 44px;margin-bottom:58px}.regions-pullquote p{font-size:clamp(39px,9vw,58px)}}
