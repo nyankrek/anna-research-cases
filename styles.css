@@ -126,4 +126,8 @@ body:not(.home-page) .case-facts dt{color:#DDAD8A}
 /* Quiet, one-time entrance as content enters the viewport. */
 .home-page.has-reveal .reveal-item{opacity:0;translate:0 18px;transition:opacity 1100ms ease,translate 1100ms cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,170ms)}
 .home-page.has-reveal .reveal-item.is-visible{opacity:1;translate:0 0}
+.home-page .intro h1.is-typing{min-height:.88em}
+.home-page .intro h1.is-typing .period{display:none}
+.home-page .intro h1.is-typing::after{content:"";display:inline-block;width:.025em;height:.72em;margin-left:.04em;background:currentColor;vertical-align:-.04em;animation:typing-caret .8s steps(1,end) infinite}
+@keyframes typing-caret{50%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.home-page.has-reveal .reveal-item{opacity:1;translate:none;transition:none}.home-page .portrait-frame img{transform:none}}

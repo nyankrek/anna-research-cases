@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#F9E4C5">
   <meta name="description" content="Anna Krekova is a UX researcher working across product discovery, customer experience and research practice.">
   <title>Anna Krekova — UX research</title>
-  <link rel="stylesheet" href="styles.css?v=parallax-2026">
+  <link rel="stylesheet" href="styles.css?v=typed-2026">
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -105,11 +105,26 @@
     (() => {
       if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      const hero = document.querySelectorAll('.intro .eyebrow, .intro h1, .intro-role, .intro-context, .portrait-frame');
+      const title = document.querySelector('#intro-title');
+      const nameNode = title.firstChild;
+      const name = nameNode.textContent;
+      title.setAttribute('aria-label', `${name}.`);
+      nameNode.textContent = '';
+      title.classList.add('is-typing');
+      let character = 0;
+      const typeName = () => {
+        nameNode.textContent = name.slice(0, ++character);
+        if (character < name.length) setTimeout(typeName, 90);
+        else setTimeout(() => title.classList.remove('is-typing'), 420);
+      };
+      setTimeout(typeName, 620);
+
+      const hero = document.querySelectorAll('.intro .eyebrow, .intro-role, .intro-context, .portrait-frame');
       const later = document.querySelectorAll('.section-heading, .project, .about-section h2, .about-copy, .contact-section h2, .contact-email, .contact-link');
       const items = [...hero, ...later];
       items.forEach((item) => item.classList.add('reveal-item'));
-      hero.forEach((item, index) => item.style.setProperty('--reveal-delay', `${320 + index * 190}ms`));
+      const heroDelays = [260, 1250, 1500, 1750];
+      hero.forEach((item, index) => item.style.setProperty('--reveal-delay', `${heroDelays[index]}ms`));
       document.body.classList.add('has-reveal');
 
       const observer = new IntersectionObserver((entries) => {
