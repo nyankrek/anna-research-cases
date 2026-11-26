@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#F9E4C5">
   <meta name="description" content="Anna Krekova is a UX researcher working across product discovery, customer experience and research practice.">
   <title>Anna Krekova — UX research</title>
-  <link rel="stylesheet" href="styles.css?v=typed-2026">
+  <link rel="stylesheet" href="styles.css?v=parallax-strong-2026">
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -137,14 +137,19 @@
       items.forEach((item) => observer.observe(item));
 
       const photo = document.querySelector('.portrait-frame');
+      const portrait = document.querySelector('.intro-portrait');
       let framePending = false;
       const updateParallax = () => {
         framePending = false;
         const bounds = photo.getBoundingClientRect();
+        const desktop = window.innerWidth > 720;
+        const previousShift = desktop ? parseFloat(portrait.style.getPropertyValue('--portrait-shift')) || 0 : 0;
         const distance = window.innerHeight / 2 + bounds.height / 2;
-        const progress = (window.innerHeight / 2 - bounds.top - bounds.height / 2) / distance;
+        const progress = (window.innerHeight / 2 - (bounds.top - previousShift) - bounds.height / 2) / distance;
         const shift = Math.max(-24, Math.min(24, progress * 24));
+        const portraitShift = desktop ? Math.max(-70, Math.min(70, progress * 95)) : 0;
         photo.style.setProperty('--photo-shift', `${shift.toFixed(1)}px`);
+        portrait.style.setProperty('--portrait-shift', `${portraitShift.toFixed(1)}px`);
       };
       const requestParallax = () => {
         if (framePending) return;
