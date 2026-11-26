@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#F9E4C5">
   <meta name="description" content="Anna Krekova is a UX researcher working across product discovery, customer experience and research practice.">
   <title>Anna Krekova — UX research</title>
-  <link rel="stylesheet" href="styles.css?v=reveal-2026">
+  <link rel="stylesheet" href="styles.css?v=parallax-2026">
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -109,7 +109,7 @@
       const later = document.querySelectorAll('.section-heading, .project, .about-section h2, .about-copy, .contact-section h2, .contact-email, .contact-link');
       const items = [...hero, ...later];
       items.forEach((item) => item.classList.add('reveal-item'));
-      hero.forEach((item, index) => item.style.setProperty('--reveal-delay', `${index * 110}ms`));
+      hero.forEach((item, index) => item.style.setProperty('--reveal-delay', `${320 + index * 190}ms`));
       document.body.classList.add('has-reveal');
 
       const observer = new IntersectionObserver((entries) => {
@@ -120,6 +120,25 @@
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       items.forEach((item) => observer.observe(item));
+
+      const photo = document.querySelector('.portrait-frame');
+      let framePending = false;
+      const updateParallax = () => {
+        framePending = false;
+        const bounds = photo.getBoundingClientRect();
+        const distance = window.innerHeight / 2 + bounds.height / 2;
+        const progress = (window.innerHeight / 2 - bounds.top - bounds.height / 2) / distance;
+        const shift = Math.max(-24, Math.min(24, progress * 24));
+        photo.style.setProperty('--photo-shift', `${shift.toFixed(1)}px`);
+      };
+      const requestParallax = () => {
+        if (framePending) return;
+        framePending = true;
+        requestAnimationFrame(updateParallax);
+      };
+      window.addEventListener('scroll', requestParallax, { passive: true });
+      window.addEventListener('resize', requestParallax);
+      requestParallax();
     })();
   </script>
 </body>
