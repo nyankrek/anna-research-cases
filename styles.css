@@ -96,6 +96,7 @@ body:not(.home-page) .case-facts dt{color:#DDAD8A}
 .home-page .case-cover.cover-desirability{--cover-accent:#DDAD8A}
 .home-page .case-cover.cover-editor{--cover-accent:#88A33B}
 .home-page .case-cover-top,.home-page .case-cover-bottom{display:flex;justify-content:space-between;gap:14px;font-size:11px;font-weight:700;line-height:1.35;letter-spacing:.055em;text-transform:uppercase}
+.home-page .case-cover-top{justify-content:flex-end}
 .home-page .case-cover-title{align-self:center;font:400 clamp(44px,5.2vw,76px)/.94 Georgia,serif;letter-spacing:-.065em}
 .home-page .case-cover-bottom{padding-top:12px;border-top:1px solid #1B4436}
 .home-page .case-cover:focus-visible{outline:3px solid #DDAD8A;outline-offset:4px}
