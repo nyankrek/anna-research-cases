@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#F9E4C5">
   <meta name="description" content="Anna Krekova is a UX researcher working across product discovery, customer experience and research practice.">
   <title>Anna Krekova — UX research</title>
-  <link rel="stylesheet" href="styles.css?v=portrait-2026">
+  <link rel="stylesheet" href="styles.css?v=reveal-2026">
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -101,5 +101,26 @@
   </main>
 
   <footer class="site-footer page-wrap"><span>© 2026 Anna Krekova</span><a href="#main">Back to top ↑</a></footer>
+  <script>
+    (() => {
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const hero = document.querySelectorAll('.intro .eyebrow, .intro h1, .intro-role, .intro-context, .portrait-frame');
+      const later = document.querySelectorAll('.section-heading, .project, .about-section h2, .about-copy, .contact-section h2, .contact-email, .contact-link');
+      const items = [...hero, ...later];
+      items.forEach((item) => item.classList.add('reveal-item'));
+      hero.forEach((item, index) => item.style.setProperty('--reveal-delay', `${index * 110}ms`));
+      document.body.classList.add('has-reveal');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      items.forEach((item) => observer.observe(item));
+    })();
+  </script>
 </body>
 </html>
